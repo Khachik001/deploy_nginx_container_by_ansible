@@ -1,0 +1,2 @@
+ansible_user                 : ubuntu
+ansible_ssh_private_key_file : #write_path_to_ssh_private_key
