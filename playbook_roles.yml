@@ -1,0 +1,6 @@
+- hosts: all
+  become: true
+
+  roles:
+    - { role: install_docker, when: ansible_system == 'Linux' }
+    - { role: deploy_nginx, when: ansible_system == 'Linux' }
