@@ -1,0 +1,15 @@
+---
+# tasks file for deploy_nginx
+- name: Copy file to destination server
+  copy:
+    src: "{{ item }}"
+    dest: /home/ubuntu/
+  loop:
+    - "Dockerfile"
+    - "docker-compose.yml"
+    - "index.html"
+
+- name: Execute Docker Compose command
+  shell: docker-compose up -d
+  args:
+    chdir: /home/ubuntu/
